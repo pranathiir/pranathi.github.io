@@ -11,6 +11,7 @@ body {
 
 h1 {
 	text-transform: uppercase;
+	text-align: center;
 	font-size: 24px;
 	margin: 10px;
 }
@@ -22,7 +23,7 @@ main {
 section {
 	flex: 1;
 	border: 1px solid black;
-	/*position: relative;*/
+	position: relative;
 	margin: 10px;
 	padding: 10px;
 	background-color: #cae7d3;
@@ -32,9 +33,11 @@ section {
 	/*background-color: #87664e;*/
 	font-size: 125%;
 	font-weight: bold;
-  	text-align: right;
+  	position: absolute;
+  	top: -20px;
+  	right: -10px;
   	text-transform: uppercase;
-  	margin-bottom: 10px;
+  	margin: 0 10px 0 20px;
   	padding: 10px;
   	border: 1px solid black;
 }
@@ -42,7 +45,7 @@ section {
 .section-content {
 	font-size: 16px;
 	background-color: #c3a17e;
-	margin: 0;
+	margin: 60px 0 0 0; 
 	padding: 10px;
 	border: 1px solid black;
 }
@@ -59,6 +62,17 @@ section {
 	background-color: #86b049;
 }
 
+/**desktop view**/
+@media (min-width: 992px) {
+	section {
+		width: 33.33%;
+		float: left;
+		clear: none;
+		/*flex-basis: 100%;*/
+	}
+}
+
+/**tablet view**/
 @media (min-width: 768px) and (max-width: 991px) {
 	section {
 		width: 50%;
@@ -72,15 +86,16 @@ section {
 	}
 }
 
+/**mobile view**/
 @media (max-width: 767px) {
 	section {
 		width: 100%;
 		float: none;
 		clear: both;
 	}
-	/*.section-title {
+	.section-title {
 		position: relative;
-	}*/
+	}
 	h1, .section-title {
 		font-size: 150%;
 	}
@@ -97,13 +112,4 @@ h1, .section-title {
 .section-content p {
 	margin: 0;
 	padding: 10px;
-}
-
-@media (min-width: 992px) {
-	section {
-		width: 33.33%;
-		float: left;
-		clear: none;
-		/*flex-basis: 100%;*/
-	}
 }
